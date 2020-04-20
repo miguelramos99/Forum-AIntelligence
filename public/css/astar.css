@@ -1,0 +1,54 @@
+
+
+#main{
+	margin-left: 200px;
+}
+
+
+
+#message {
+	color:#f00;
+	font-size:1.2em;
+}
+#controls {
+	border: none;
+	margin-left: 200px;
+	padding:5px 0;
+	width:650px;
+}
+#search_grid  {
+	width:650px;
+	height:650px;
+	position: relative;
+}
+
+.grid_item {
+	display: block;
+	border: 1px solid #bbb;
+	float: left;
+	line-height:12px;
+	font-size:10px;
+}
+.grid_item.wall {
+  background-color: #000000;
+}
+.grid_item.weight1 {
+  background-color: #ffffff;
+}
+.grid_item.weight3 {
+  background-color: #D6EAFF;
+}
+.grid_item.weight5 {
+  background-color: #ABD1FF;
+}
+.grid_item.start {
+	background-color: #FF703F;
+}
+.grid_item.active {
+	background-color: #FF703F;
+}
+
+#weightsKey {
+  display: none;
+}
+

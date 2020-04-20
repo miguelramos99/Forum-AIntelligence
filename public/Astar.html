@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/fav.png" />
+  <!-- Site Title -->
+  <title>Algoritmo A*</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet" />
+  <!--
+          CSS
+          =============================================
+        -->
+  <link rel="stylesheet" href="css/linearicons.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/owl.carousel.css" />
+  <link rel="stylesheet" href="css/nice-select.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/astar.css" />
+</head>
+
+<body>
+  <header class="default-header">
+    <nav class="navbar navbar-expand-lg  navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          AIntelligence
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="lnr lnr-menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <!-- Dropdown -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                Técnicas de Procura
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" id="Minimax" href="minimax.html">Minimax</a>
+                <a class="dropdown-item" id="Largura e Profundidade" href="dfs_bfs.html">Largura e Profundidade</a>
+                <a class="dropdown-item" id="A*" href="Astar.html">A*</a>
+                <a class="dropdown-item" id="gananciosa" href="gananciosa.html">Gananciosa</a>
+                <a class="dropdown-item" id="comparação" href="compara.html">Comparação</a>
+              </div>
+            </li>
+            <li><a href="">Login | Registo</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <!-- ================ End Header Area ================= -->
+  <section class="banner-area">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-12 banner-right">
+          <h1 class="text-white">
+            Algoritmo A*
+          </h1>
+          <div class="link-nav">
+            <span class="box">
+              <a href="index.html">Home </a>
+              <i class="lnr lnr-arrow-right"></i>
+              <a href="elements.html">Técnicas de Procura</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sample-text-area">
+    <div class="container">
+      <h3 class="text-heading">Informação</h3>
+      <p class="sample-text" id="astar_t">
+        Every avid independent filmmaker has <b>Bold</b> about making that <i>Italic</i> interest documentary, or short
+        film
+        to show off their creative prowess. Many have great ideas and want to “wow” the<sup>Superscript</sup> scene, or
+        video
+        renters with their big project. But once you have the<sub>Subscript</sub> “in the can” (no easy feat), how do
+        you
+        move
+        from a <del>Strike</del> through of master DVDs with the <u>“Underline”</u> marked hand-written title inside a
+        secondhand
+        CD case, to a pile of cardboard boxes full of shiny new, retail-ready DVDs, with UPC barcodes and polywrap
+        sitting
+        on
+        your doorstep? You need to create eye-popping artwork and have your project replicated. Using a reputable full
+        service
+        DVD Replication company like PacificDisc, Inc. to partner with is certainly a helpful option to ensure a
+        professional
+        end result, but to help with your DVD replication project, here are 4 easy steps to follow for good DVD
+        replication
+        results:
+
+      </p>
+    </div>
+    <h3 class="text-heading" id="dem">Demonstração</h3>
+    <div id="controls" class='clear'>
+
+      <label for="selectWallFrequency">Frequência de blocos: </label>
+      <select id="selectWallFrequency">
+        <option value=".1">10%</option>
+        <option value=".2">20%</option>
+        <option value=".3">30%</option>
+        <option value=".4">40%</option>
+      </select>
+      <br />
+      <label for="selectGridSize">Tamanho da grelha: </label>
+      <select id="selectGridSize" name="selectGridSize">
+        <option value="10">10x10</option>
+        <option value="15">15x15</option>
+        <option value="20">20x20</option>
+        <option value="30">30x30</option>
+        <option value="40" selected="selected">40x40</option>
+        <option value="50">50x50</option>
+        <option value="100">100x100</option>
+        <option value="150">150x150</option>
+      </select>
+
+      <br />
+      <label for="checkDebug">Mostrar informação da procura?</label>
+      <input type="checkbox" name="checkDebug" id="checkDebug" />
+      <br />
+      <label for="searchDiagonal">Permitir movimento diagonal?</label>
+      <input type="checkbox" name="searchDiagonal" id="searchDiagonal" />
+      <br />
+      <input type="button" id="btnGenerate" value="Novo mapa" />
+      <fieldset id='weightsKey'>
+        <legend>Key:</legend>
+        <div>
+          <span class="grid_item weight1" style="width: 14.25px; height: 14.25px; margin-right: 6px;"
+            id="keyWeight3"></span> Weight of 1 </div>
+        <div>
+          <span class="grid_item weight3" style="width: 14.25px; height: 14.25px; margin-right: 6px;"
+            id="keyWeight3"></span> Weight of 3 </div>
+        <div>
+          <span class="grid_item weight5" style="width: 14.25px; height: 14.25px; margin-right: 6px;"
+            id="keyWeight3"></span> Weight of 5 </div>
+        <div>
+          <span class="grid_item wall" style="width: 14.25px; height: 14.25px; margin-right: 6px;" id="keyWall"></span>
+          Wall (imapassable) </div>
+      </fieldset>
+      <br />
+      <span id="message">Clique num quadrado para pesquisar</span>
+    </div>
+
+    <div id="main">
+      <div id="search_grid">Loading grid...</div>
+    </div>
+    <button class="btn" id="avancar" onclick="quest()">
+      Questionário
+    </button>
+    <div class="comment-form">
+      <h4>Deixa um comentário</h4>
+      <form>
+        <div class="form-group form-inline">
+          <div class="form-group col-lg-6 col-md-12 name">
+            <input type="text" class="form-control" id="name" placeholder="Nome" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Enter Name'">
+          </div>
+          <div class="form-group col-lg-6 col-md-12 email">
+            <input type="email" class="form-control" id="email" placeholder="Email" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'Enter email address'">
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="subject" placeholder="Assunto" onfocus="this.placeholder = ''"
+            onblur="this.placeholder = 'Subject'">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control mb-10" rows="5" name="message" placeholder="Mensagem"
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+        </div>
+        <a href="#" class="btn">Postar</a>
+      </form>
+    </div>
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="js/vendor/owl.carousel.min.js"></script>
+    <script src="js/vendor/jquery.counterup.min.js"></script>
+    <script src="js/vendor/jquery.nice-select.min.js"></script>
+    <script src='js/vendor/jquery-1.7.1.min.js'></script>
+
+    <script type='text/javascript' src='js/astar.js'></script>
+    <script type='text/javascript' src='js/astar2.js'></script>
+</body>
+
+</html>
