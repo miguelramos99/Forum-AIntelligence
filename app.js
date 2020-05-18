@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 
 var indexRouter = require('./routes/tec_rout');
-
+var questRouter = require('./routes/quest_rout');
+var loginRouter = require('./routes/login_rout');
 
 var app = express();
 
@@ -21,6 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/tec', indexRouter);
+app.use('/api/quest', questRouter);
+app.use('/api/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

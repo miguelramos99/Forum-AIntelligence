@@ -5,7 +5,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/fav.png" />
 	
-	<title>Largura e Profundidade</title>
+	<title id="title">Questionário</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700"
 		rel="stylesheet" />
@@ -67,11 +67,7 @@
 		</nav>
 		<div class="search-input" id="search-input-box">
 			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search-input" placeholder="Search Here" />
-					<button type="submit" class="btn"></button>
-					<span class="lnr lnr-cross" id="close-search" title="Close Search"></span>
-				</form>
+				
 			</div>
 		</div>
 	</header>
@@ -96,70 +92,11 @@
 
 
 		<form id="quiz">
-			<!-- Question 1 -->
-			<h2>Pergunta 1</h2>
-			<label><input type="radio" name="q1" value="c1">
-				A
-			</label><br />
-			<label><input type="radio" name="q1" value="c2">
-				B
-			</label><br />
-			<label><input type="radio" name="q1" value="c3">
-				C
-			</label><br />
-			<label><input type="radio" name="q1" value="c4">
-				D
-			</label><br />
+			
 
-			<!-- Question 2 -->
-			<h2>Pergunta 2</h2>
-			<label><input type="radio" name="q1" value="c1">
-				A
-			</label><br />
-			<label><input type="radio" name="q1" value="c2">
-				B
-			</label><br />
-			<label><input type="radio" name="q1" value="c3">
-				C
-			</label><br />
-			<label><input type="radio" name="q1" value="c4">
-				D
-			</label><br />
-
-			<!-- Question 3 -->
-			<h2>Pergunta 3</h2>
-			<label><input type="radio" name="q1" value="c1">
-				A
-			</label><br />
-			<label><input type="radio" name="q1" value="c2">
-				B
-			</label><br />
-			<label><input type="radio" name="q1" value="c3">
-				C
-			</label><br />
-			<label><input type="radio" name="q1" value="c4">
-				D
-			</label><br />
-
-			<!-- Question 4 -->
-			<h2>Pergunta 4</h2>
-			<label><input type="radio" name="q1" value="c1">
-				A
-			</label><br />
-			<label><input type="radio" name="q1" value="c2">
-				B
-			</label><br />
-			<label><input type="radio" name="q1" value="c3">
-				C
-			</label><br />
-			<label><input type="radio" name="q1" value="c4">
-				D
-			</label><br />
-
-			<button type="submit" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
-			<button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
+			
 		</form>
-
+		<button type="submit" id="submit" onclick="VerificarChecked()">Submeter respostas</button>
 
 		<div id="answer">Resultado:</div>
 	</div>
@@ -172,6 +109,7 @@
 	<script src="js/vendor/jquery.counterup.min.js"></script>
 	<script src="js/vendor/jquery.nice-select.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/quest.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,12 @@
 $(".dropdown-item").click(function () {
 	var a = $(this).attr("id");
 	localStorage.setItem("tecnica", a);
-
 });
+$(".tecnica").click(function () {
+	var a = $(this).attr("id");
+	localStorage.setItem("tecnica", a);
+});
+
 
 function quest() {
 	location.replace("quest.html")

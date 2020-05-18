@@ -1,4 +1,7 @@
-
+#img_user{
+  width: 80px;
+  height: 50px;;
+}
 ::-moz-selection {
   background-color: #7c32ff;
   color: #fff; }
@@ -19,11 +22,15 @@ margin-top: 20px;
     border-radius: 15px;
     border: 5px solid #2D2D2D;
 }
+#canvasab{
+  margin-left: 400px;
+  display: none;
+}
 #minimax{
-    margin-left: 200px;
+    margin-left: 400px;
   }
 #dem{
-  margin-left: 200px;
+  margin-left: 400px;
 }
 #message {
 	color:#f00;
@@ -2176,15 +2183,15 @@ th {
       padding-bottom: 0px; } }
 
 .comments-area {
-  border: 1px solid #eee;
-  padding: 50px 20px;
-  margin-top: 50px; }
+  border: 3px solid #eee;
+  padding: 20px 20px;
+  margin-top: 20px; }
   @media (max-width: 414px) {
     .comments-area {
       padding: 50px 8px; } }
   .comments-area h4 {
     text-align: center;
-    margin-bottom: 50px; }
+    margin-bottom: 30px; }
   .comments-area a {
     color: #222222; }
   .comments-area .comment-list {
@@ -2199,7 +2206,7 @@ th {
       .comments-area .comment-list .single-comment .date {
         font-size: 11px; }
       .comments-area .comment-list .single-comment .comment {
-        font-size: 10px; } }
+        font-size: 12px; } }
   .comments-area .thumb {
     margin-right: 20px; }
   .comments-area .date {

@@ -4,7 +4,7 @@
 <head>
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/fav.png" />
-	
+
 	<title>Minimax</title>
 
 
@@ -49,12 +49,12 @@
 								<a class="dropdown-item" id="Minimax" href="minimax.html">Minimax</a>
 								<a class="dropdown-item" id="Largura e Profundidade" href="dfs_bfs.html">Largura e
 									Profundidade</a>
-								<a class="dropdown-item" id="A*" href="Astar.html">A*</a>
+								<a class="dropdown-item" id="Astar" href="Astar.html">A*</a>
 								<a class="dropdown-item" id="gananciosa" href="gananciosa.html">Gananciosa</a>
 								<a class="dropdown-item" id="comparação" href="compara.html">Comparação</a>
 							</div>
 						</li>
-						<li><a href="">Login | Registo</a></li>
+						<li><a href="login.html">Login | Registo</a></li>
 
 						<li>
 							<button class="search">
@@ -128,7 +128,7 @@
 		<button type="button" value="Change game tree" onclick="create_game_tree()" name="definetree">
 			Criar a árvore
 		</button>
-		
+
 		<textarea id="MyMessagesArea" readonly="readonly" wrap="hard" rows="4" cols="100"></textarea>
 		<br>
 
@@ -148,29 +148,31 @@
 		Questionário
 	</button>
 	</div>
-	<div class="comment-form">
+	<div id="comment-form" class="comment-form">
 		<h4>Deixa um comentário</h4>
 		<form>
 			<div class="form-group form-inline">
 				<div class="form-group col-lg-6 col-md-12 name">
 					<input type="text" class="form-control" id="name" placeholder="Nome" onfocus="this.placeholder = ''"
-						onblur="this.placeholder = 'Enter Name'">
+						onblur="this.placeholder = 'Enter Name'" readonly>
 				</div>
-				<div class="form-group col-lg-6 col-md-12 email">
-					<input type="email" class="form-control" id="email" placeholder="Email"
-						onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-				</div>
+				
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" id="subject" placeholder="Assunto"
 					onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
 			</div>
 			<div class="form-group">
-				<textarea class="form-control mb-10" rows="5" name="message" placeholder="Mensagem"
+				<textarea id="message" class="form-control mb-10" rows="5" name="message" placeholder="Mensagem"
 					onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
 			</div>
-			<a href="#" class="btn">Postar</a>
+			<a class="btn" onclick="postar()">Postar</a>
 		</form>
+	</div>
+
+	<div id="add_comment">
+
+
 	</div>
 
 
