@@ -11,6 +11,8 @@ window.onload = function () {
 	if (username == null){
 		$("#comment-form").hide();
 		$("#avancar").hide();
+	}else{
+		$("#login").hide();
 	}
 	$.ajax({
 		url: '/api/tec/' + tec, //Igual ao que está no app.js

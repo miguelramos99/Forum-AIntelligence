@@ -12,6 +12,8 @@ window.onload = function () {
 	if (username == null){
 		$("#comment-form").hide();
 		$("#avancar").hide();
+	}else{
+		$("#login").hide();
 	}
 	
 	$.ajax({
